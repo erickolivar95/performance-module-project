@@ -1,0 +1,22 @@
+1. Install Docker desktop in the computer and WSL 2. In order for this to work well, it is recommended to have windows 10 pro (if using windows).
+   - For Docker desktop on windows:
+     https://docs.docker.com/desktop/windows/install/
+   - For WSL 2:
+     https://docs.microsoft.com/en-us/windows/wsl/install-manual
+
+2. Open Docker desktop and create an account in the sign in button from the top, and keep the docker desktop opened
+
+3. Install Postgresql in: https://www.postgresql.org/download/
+
+4. Execute the database and commands in the "Command in Postgres pgadmin" text file in this project
+
+5. Open the cmd of the computer (on windows), set the directory of the root of the performance-module project (where the pom.xml is)
+   by typing "cd (the directory of the project)", and then execute the command "docker-compose up". To finish executing the project 
+   after doing the "docker-compose up" you have to press ctrl+c. If you want to remove the containers created in the docker desktop 
+   you can execute the command "docker-compose down". If you want to remove all the data stored in the virtual database in the docker, 
+   you have to remove first the container created in docker desktop of the project and then remove the volumes in the docker desktop
+
+6. Open swagger by going tp localhost:8080/swagger-ui.html# in the browser to use the endpoints. First you have to login in the page
+   localhost:8080/login. If you want to log out you can go to localhost:8080/logout. The users and their password are the following:
+   - User: John, Password: test123, Role: employee
+   - User: Mary, Password: test123, Role: manager

@@ -1,0 +1,43 @@
+Create the database "Performance1" and execute the following:
+
+CREATE TABLE IF NOT EXISTS public.evaluation
+(
+ id serial NOT NULL,
+ manager_id integer default NULL,
+ employee_id integer default NULL,
+ comment varchar(256) default NULL,
+ months_period integer default NULL,
+ start_date date default NULL,
+ end_date date default NULL,
+ primary key(id)
+);
+
+CREATE TABLE IF NOT EXISTS public.hard_skill
+(
+ id serial NOT NULL,
+ name varchar(256) default NULL,
+ description varchar(256) default NULL,
+ evaluation_id integer default NULL,
+ primary key(id),
+ foreign key(evaluation_id) references evaluation(id)
+);
+
+CREATE TABLE IF NOT EXISTS public.soft_skill
+(
+ id serial NOT NULL,
+ name varchar(256) default NULL,
+ description varchar(256) default NULL,
+ evaluation_id integer default NULL,
+ primary key(id),
+ foreign key(evaluation_id) references evaluation(id)
+);
+
+CREATE TABLE IF NOT EXISTS public.commitment
+(
+ id serial NOT NULL,
+ name varchar(256) default NULL,
+ description varchar(256) default NULL,
+ evaluation_id integer default NULL,
+ primary key(id),
+ foreign key(evaluation_id) references evaluation(id)
+);
