@@ -70,7 +70,7 @@ public class ManagerController {
 					content=@Content(mediaType="application/json", schema=@Schema(implementation=Evaluation.class))),
 			@ApiResponse(description="This type of employee can not access here", responseCode="403", content=@Content(mediaType="application/json", schema=@Schema(implementation=ErrorDTO.class))),
 			@ApiResponse(description="Incorrect request", responseCode="400", content=@Content(mediaType="application/json", schema=@Schema(implementation=ErrorDTO.class)))})
-	public ResponseEntity<Object> addEvaluation(@RequestBody @Valid EvaluationPostDTO body, BindingResult bindingResult) throws ParseException {
+	public ResponseEntity<Object> addEvaluation(@io.swagger.v3.oas.annotations.parameters.RequestBody(description = "The parameter conditionTest determines if the evaluation date starts from the current date or from a date in the past, if it is true it will start from the current date. It is only for testing puroposes so that we can add evaluation to an employee and not to have to wait until the evaluation time is finished") @RequestBody @Valid EvaluationPostDTO body, BindingResult bindingResult) throws ParseException {
 		
 		if(bindingResult.hasErrors()) {
 			throw new IncorrectBodyException("Incorrect request");
