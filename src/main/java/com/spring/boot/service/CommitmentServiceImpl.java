@@ -132,7 +132,7 @@ public class CommitmentServiceImpl implements CommitmentService {
 			commitment.setDescription(body.getDescription());
 		}
 		else {
-			throw new ItemNotFoundException("Hard skill id not found");
+			throw new ItemNotFoundException("Commitment id not found");
 		}
 		
 		

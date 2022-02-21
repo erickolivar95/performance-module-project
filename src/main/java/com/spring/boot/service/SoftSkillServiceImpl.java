@@ -132,7 +132,7 @@ public class SoftSkillServiceImpl implements SoftSkillService {
 			softSkill.setDescription(body.getDescription());
 		}
 		else {
-			throw new ItemNotFoundException("Hard skill id not found");
+			throw new ItemNotFoundException("Soft skill id not found");
 		}
 		
 		
